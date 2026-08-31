@@ -17,8 +17,8 @@
     "build-a-timestamp-microservice": true,
     "build-a-web-server": true,
     "learn-nodejs-repl": true,
-    "build-a-case-converter": false,
-    "build-a-prime-number-checker-module": true,
+    "build-a-case-converter": true,
+    "build-a-prime-number-checker-module": false,
     "build-a-file-processor": true,
     "build-a-family-movie-watchlist-api": true,
     "build-a-random-joke-app": true,
@@ -42,7 +42,7 @@
       "open": true,
       "showLoader": true,
       "timeout": 4000,
-      "url": "https://psychic-spoon-q74x4g94xwqj34j47-8080.app.github.dev"
+      "url": "https://obscure-rotary-phone-r46x6vr6xxvgfx5w9-8080.app.github.dev"
     }
   ],
   "terminal.integrated.defaultProfile.linux": "bash",
