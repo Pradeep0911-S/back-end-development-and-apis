@@ -15,10 +15,10 @@
     "package.json": true,
     "README.md": true,
     "build-a-timestamp-microservice": true,
-    "build-a-web-server": true,
+    "build-a-web-server": false,
     "learn-nodejs-repl": true,
     "build-a-case-converter": true,
-    "build-a-prime-number-checker-module": false,
+    "build-a-prime-number-checker-module": true,
     "build-a-file-processor": true,
     "build-a-family-movie-watchlist-api": true,
     "build-a-random-joke-app": true,
@@ -42,7 +42,7 @@
       "open": true,
       "showLoader": true,
       "timeout": 4000,
-      "url": "https://obscure-rotary-phone-r46x6vr6xxvgfx5w9-8080.app.github.dev"
+      "url": "https://laughing-disco-7v5x54r5xjxj2r554-8080.app.github.dev"
     }
   ],
   "terminal.integrated.defaultProfile.linux": "bash",
