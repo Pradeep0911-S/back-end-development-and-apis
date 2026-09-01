@@ -15,13 +15,13 @@
     "package.json": true,
     "README.md": true,
     "build-a-timestamp-microservice": true,
-    "build-a-web-server": false,
+    "build-a-web-server": true,
     "learn-nodejs-repl": true,
     "build-a-case-converter": true,
     "build-a-prime-number-checker-module": true,
     "build-a-file-processor": true,
     "build-a-family-movie-watchlist-api": true,
-    "build-a-random-joke-app": true,
+    "build-a-random-joke-app": false,
     "build-a-personal-profile-app": true,
     "build-a-submission-form": true,
     "build-a-data-sanitizer": true,
@@ -42,7 +42,7 @@
       "open": true,
       "showLoader": true,
       "timeout": 4000,
-      "url": "https://laughing-disco-7v5x54r5xjxj2r554-8080.app.github.dev"
+      "url": "https://symmetrical-palm-tree-v6464pxgqj42w657-8080.app.github.dev"
     }
   ],
   "terminal.integrated.defaultProfile.linux": "bash",
