@@ -1,9 +1,9 @@
 {
-  "currentProject": null,
+  "currentProject": "build-a-data-sanitizer",
   "locale": "english",
   "lastSeed": {
     "projectDashedName": "build-a-web-server",
     "lessonNumber": 59
   },
-  "lastWatchChange": 21
+  "lastWatchChange": 0
 }
