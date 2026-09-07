@@ -26,15 +26,6 @@ wss.on('connection',(socket ,req)=>{
     const username = new URL(req.url, "http://localhost").searchParams.get(
         "username",
     );
-    const message = JSON.stringify({
-        type : "system",
-        text: `${username} joined`
-    })
-    wss.clients.forEach(client => {
-        if (client.readyState === 1) { 
-            client.send(message); 
-        }
-    });
     socket.on('message',(data)=>{
         const { username, text } = JSON.parse(data);
         const message = JSON.stringify({
