@@ -3,11 +3,18 @@
   "version": "0.0.1",
   "description": "",
   "main": "server.js",
-  "scripts": {},
-  "dependencies": {
-    "ws": "^8.18.2"
+  "scripts": {
+    "start": "node server.js"
   },
-  "keywords": ["node", "freecodecamp"],
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "ws": "^8.21.3"
+  },
+  "keywords": [
+    "node",
+    "freecodecamp"
+  ],
   "license": "MIT",
   "type": "module"
 }
