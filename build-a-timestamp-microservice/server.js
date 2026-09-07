@@ -13,6 +13,36 @@ app.get("/", (_req, res) => {
 
 // Do not change code above this line
 
+app.get("/api", (req, res) => {
+  const date = new Date();
+  return res.json({
+    unix: date.getTime(),
+    utc: date.toUTCString(),
+  });
+});
+
+app.get("/api/:date", (req, res) => {
+  const { date } = req.params;
+  let dateObj;
+
+  if (/^\d+$/.test(date)) {
+    dateObj = new Date(Number(date));
+  } else {
+    dateObj = new Date(date);
+  }
+
+  if (isNaN(dateObj.getTime())) {
+    return res.json({ error: "Invalid Date" });
+  }
+
+  res.json({
+    unix: dateObj.getTime(),
+    utc: dateObj.toUTCString(),
+  });
+})
+
+
+
 // Do not change code below this line
 
 const PORT = 8000;
