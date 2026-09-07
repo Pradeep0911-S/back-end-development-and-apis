@@ -27,8 +27,8 @@
     "build-a-data-sanitizer": true,
     "build-a-weather-service-api": true,
     "build-a-bank-api": true,
-    "build-a-resource-monitor": false,
-    "build-a-chat-app": true,
+    "build-a-resource-monitor": true,
+    "build-a-chat-app": false,
     "build-jwt-protected-routes": true
   },
   "chat.disableAIFeatures": true,
