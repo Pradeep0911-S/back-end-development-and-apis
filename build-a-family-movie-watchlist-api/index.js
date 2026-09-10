@@ -1,7 +1,7 @@
 import express from "express";
 import helmet from "helmet";
 
-import watchlistRoutes from "./routes/watchlist";
+import watchlistRoutes from "./routes/watchlist.js";
 
 const PORT = process.env.PORT;
 const app = express();
