@@ -1,6 +1,6 @@
 import express from "express";
-import authenticate from "../middleware/authenticate.js";
-import authorizeModification from "../middleware/authorize.js";
+import {authenticate} from "../middleware/authenticate.js"
+import { authorizeModification } from "../middleware/authorize.js"
 import { getWatchlist, addMovie } from "../utils/db.js";
 
 const router = express.Router();
