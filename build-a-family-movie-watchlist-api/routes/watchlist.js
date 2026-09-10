@@ -1,12 +1,12 @@
 import express from "express";
 import authenticate from "../middleware/authenticate.js";
 import authorizeModification from "../middleware/authorize.js";
-import { getWatchlist } from "../utils/db.js";
+import { getWatchlist, addMovie } from "../utils/db.js";
 
 const router = express.Router();
 
 router.use(authenticate);
-router.use('/:userId',authorizeModification)
+router.use('/:userId/movies',authorizeModification)
 
 router.get('/:userId',(req, res)=>{
     const id = Number(req.params.userId);
