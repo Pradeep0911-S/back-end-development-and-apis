@@ -1,33 +1,98 @@
+
 import express from "express";
-import {authenticate} from "../middleware/authenticate.js"
-import { authorizeModification } from "../middleware/authorize.js"
-import { getWatchlist, addMovie } from "../utils/db.js";
+
+import { authenticate } from "../middleware/authenticate.js";
+import { authorizeModification } from "../middleware/authorize.js";
+
+import {
+  getWatchlist,
+  addMovie,
+  updateMovie,
+  deleteMovie,
+} from "../utils/db.js";
 
 const router = express.Router();
 
 router.use(authenticate);
-router.use('/:userId/movies',authorizeModification)
 
-router.get('/:userId',(req, res)=>{
-    const id = Number(req.params.userId);
-    const watchlist = getWatchlist(id);
-    
-    res.status(200).json({watchlist});
-})
+router.get("/:userId", (req, res) => {
+  const userId = Number(req.params.userId);
 
-router.post('/:userId/movies', (req, res) => {
-    const id = Number(req.params.userId);
+  const watchlist = getWatchlist(userId);
 
-    const movie = addMovie(id, req.body);
+  if (watchlist === null) {
+    return res.status(404).json({
+      error: "User not found",
+    });
+  }
 
-    if (!movie) {
-        return res.status(404).json({
-            error: "User not found"
-        });
-    }
-
-    res.status(201).json(movie);
+  return res.status(200).json({
+    watchlist,
+  });
 });
 
+router.post(
+  "/:userId/movies",
+  authorizeModification,
+  (req, res) => {
+    const userId = Number(req.params.userId);
+
+    const movie = addMovie(userId, req.body);
+
+    if (movie === null) {
+      return res.status(404).json({
+        error: "User not found",
+      });
+    }
+
+    return res.status(201).json(movie);
+  }
+);
+
+
+router.put(
+  "/:userId/movies/:movieId",
+  authorizeModification,
+  (req, res) => {
+    const userId = Number(req.params.userId);
+    const movieId = Number(req.params.movieId);
+
+    const movie = updateMovie(
+      userId,
+      movieId,
+      req.body
+    );
+
+    if (movie === null) {
+      return res.status(404).json({
+        error: "Movie not found",
+      });
+    }
+
+    return res.status(200).json(movie);
+  }
+);
+
+router.delete(
+  "/:userId/movies/:movieId",
+  authorizeModification,
+  (req, res) => {
+    const userId = Number(req.params.userId);
+    const movieId = Number(req.params.movieId);
+
+    const deleted = deleteMovie(userId, movieId);
+
+    if (!deleted) {
+      return res.status(404).json({
+        error: "Movie not found",
+      });
+    }
+
+    return res.status(200).json({
+      message: "Movie removed successfully",
+    });
+  }
+);
 
 export default router;
+
