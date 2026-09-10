@@ -1,6 +1,6 @@
 import express from "express";
 import helmet from "helmet";
-
+import authRoutes from "./routes/authRoutes.js"
 import watchlistRoutes from "./routes/watchlist.js";
 
 const PORT = process.env.PORT;
@@ -12,7 +12,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Family Movie Watchlist API");
 });
-
+app.use("/api/auth",authRoutes);
 app.use("/api/watchlist", watchlistRoutes);
 
 app.listen(PORT, () => {
